@@ -1,0 +1,59 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #imagem_girando {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            animation: girar 2s infinite linear;
+            display: none;
+        }
+
+        @keyframes girar {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    Qual seu login?
+    <input type="text" id="input_login">
+    Qual sua senha?
+    <input type="password" id="input_senha">
+    <button onclick="entrar()">entrar</button>
+    // Exibe a imagem girando
+    <div id="mensagem_erro" style="color: red;"></div>
+    <img id="imagem_girando" src="galinha.png.webp" alt="Galinha Girando">
+</body>
+<script>
+    function entrar() {
+        var login = input_login.value;
+        var senha = input_senha.value;
+        var div_mensagem_erro = document.getElementById('mensagem_erro');
+        var imagem_girando = document.getElementById('imagem_girando');
+
+        if (login === 'Fernanda' && senha === '123') {
+            imagem_girando.style.display = 'block';
+            setTimeout(function () {
+                window.location.href = 'outrapagina.html';
+            }, 2000);
+        } else {
+            div_mensagem_erro.innerHTML = 'Usuário ou senha incorretos';
+            input_login.value = '';
+            input_senha.value = '';
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes blink {
+            0% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            50% {
+                opacity: 0;
+                transform: translateX(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .blinking-image {
+            width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
+            animation: blink 2s ease-in-out infinite; /* Ajuste a duração da animação conforme necessário */
+        }
+    </style>
+</head>
+<body>
+    <img src="imagens/galinha.png" alt="Imagem Piscando com Movimento" class="blinking-image">
+</body>
+</html>
+</html>
